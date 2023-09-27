@@ -1,0 +1,92 @@
+
+{% load static %}
+<div class="login-form">
+
+<h2>Login</h2>
+<style>
+  .login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #008374;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form .row i {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.login-form button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-form button.cancel-button {
+    background-color: #ccc;
+    color: #333;
+    margin-left: 10px;
+}
+
+.login-form button:hover {
+    background-color: #2980b9;
+}
+
+.login-form button.cancel-button:hover {
+    background-color: #b3b3b3;
+}
+</style>
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <div class="row">
+      <i class="fas fa-user"></i>
+      <input type="text" id="login_username" name="login_username" placeholder="Name or Phone" required>
+    </div>
+    <div class="row">
+        <i class="fas fa-phone"></i>
+        <input type="password" id="login_password" name="login_password" placeholder="Password" required>
+      </div>
+      <button type="submit">Login</button>
+     <button type="submit">Cancel</button> 
+  </form>
+</div> 
+
